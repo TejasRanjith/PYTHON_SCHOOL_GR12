@@ -1,7 +1,10 @@
-#what will be the output of the following code:
+# Lesson 1
+#* what will be the output of the following code:
+
 def interest(p,t=2,r=0.10):
     return(p*r*t)
 
+#! MAIN:
 
 print(interest(6100,1))
 print(interest(5000,r=0.05))

@@ -1,16 +1,20 @@
-# QUESTION !!!!!!
+# Lesson 1
+#* Write a python program that accepts an integer from the user & and calls function
+#* even(x) to check if the number is Even or Odd.
 
 def even(num):
     if num%2 == 0:
-        print(num,"is an even number.")
-        return "even number"
+        return(f"{num} is an even number.")
     else:
-        print(num,"is an odd number.")
-        return "odd number"
+        return(f"{num} is an odd number.")
 
+#! MAIN:
 
-even(5)
-even(74)
-even(36)
-even(123)
-print(even(546))
+num = int(input("Number : "))
+print(even(num))
+
+# even(5)
+# even(74)
+# even(36)
+# even(123)
+# print(even(546))
