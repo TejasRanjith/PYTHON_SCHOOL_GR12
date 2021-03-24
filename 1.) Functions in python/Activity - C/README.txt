@@ -1,0 +1,1 @@
+All activities of C are written in NB

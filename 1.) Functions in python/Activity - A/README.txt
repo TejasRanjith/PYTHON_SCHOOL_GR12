@@ -1,0 +1,1 @@
+All activities of A are written in NB
