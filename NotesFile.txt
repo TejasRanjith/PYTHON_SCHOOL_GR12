@@ -1,0 +1,7 @@
+A f*le *s a stream of characters occupy*ng a named place on the d*sk.
+It *s a documnet stored on permanent storage dev*ce.
+*s packaged up on the storage dev*ce as structure called f*le.
+Types of F*les are:
+1. Text F*le
+2. B*nary F*le
+3. CSV F*le

@@ -8,13 +8,13 @@ def dots():
 
 def count_I():
     with open("poem.txt","r") as f:
-        return f.read().count(" "+"I"+" ")
+        return f.read().count(" "+"I"+" ")   #! DOUBT-----------------------------------
 
 def lines_tT():
     result = []
     with open("poem.txt","r") as f:
         for sent in f.read().split(sep = "\n"):
-            if sent[0] == "T" or sent[0] == "t":
+            if sent[0] in ["T","t"]:
                 result.append(sent)
         return result
 
@@ -29,7 +29,6 @@ def longest():
         l_len = []
         for sent in l_sent:
             l_len.append(len(sent))
-        for sent in l_sent:
             if len(sent) == max(l_len):
                 return sent
 
@@ -45,18 +44,18 @@ while True:
     opt = opt.lower()
     if opt in ["cd","ci","dt","fl","ll"]:
         if opt == "cd":
-            print("\n"+"The number of dots in the poem is,",dots())
+            print("\n"+"****  The number of dots in the poem is,",dots())
         elif opt == "ci":
-            print("\n"+"The number of times 'I' is repeated is,",count_I())
+            print("\n"+"****  The number of times 'I' is repeated is,",count_I())
         elif opt == "dt":
-            print("\n"+"The following lines are starting with 'T' or 't' :")
+            print("\n"+"****  The following lines are starting with 'T' or 't' :"+"\n")
             for elem in lines_tT():
-                print(elem)
+                print("  "+elem)
         elif opt == "fl":
             a,b = lines()
-            print(" ","The following lines are the first and last lines of the poem:","",a,b,sep="\n")
+            print(" ","****  The following lines are the first and last lines of the poem:","",a,b,sep="\n")
         elif opt == "ll":
-            print(" ","****  The following line is the longest line :","  "+longest(),sep="\n")
+            print(" ","****  The following line is the longest line :"," ","  "+longest(),sep="\n")
         else:
             print("Invalid Option......")
     elif opt == "0":
@@ -69,4 +68,3 @@ while True:
         break
     else:
         print("Invalid Option......")
-

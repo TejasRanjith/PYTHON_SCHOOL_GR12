@@ -75,3 +75,7 @@
 #     countV = Vowels(str1)
 #     print("No. of Vowels in name : ",countV)
 
+import os
+os.system("cd ......")
+os.system("dir")
+os.startfile("poem.txt")
