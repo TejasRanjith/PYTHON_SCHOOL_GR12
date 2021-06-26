@@ -45,3 +45,6 @@ select PID,Pname,Sname,Price*Qty from suppliers,products
 where products.Supcode = suppliers.Supcode and products.Supcode = "S02";
 select sname,count(PID) from suppliers,products
 group by products.Supcode;
+
+select sname,count(PID) from products join suppliers on products.Supcode = suppliers.Supcode
+group by products.Supcode;

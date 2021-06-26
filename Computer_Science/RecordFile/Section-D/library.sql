@@ -39,3 +39,5 @@ set Price = Price + 50
 where Publishers = "EPB";
 select issued.Book_Id,Book_Name,Quantity_Issued from books,issued
 where books.Book_Id = issued.Book_Id;
+
+select Book_Id,Book_Name,Quantity_Issued from books join issued on books.Book_Id = issued.Book_Id;
