@@ -1,59 +1,40 @@
-def factorial(n):
-    tot = 1
-    for num in range(n,0,-1):
-        tot = tot*num
-    return tot
+def ChangeLine():
+    with open("poem.txt","r") as f:
+        data = f.readlines()
+        for elem in data:
+            if elem[0] == "T":
+                print(elem.replace("T","#"))
+                continue
+            print(elem)
 
-def fib(n):
-    a,b,i,l = 0,1,0,[]
-    while i<n:
-        s = a+b
-        a,b,s,i = s,a,b,i+1
-        l.append(b)
-    return l
+def ConvertCase():
+    with open("poem.txt","r") as f:
+        data = f.readlines()
+        for elem in data:
+            print(elem.swapcase())
 
-def prime(n):
-    l = []
-    for num in range(0,n+1):
-        for i in range(2,num):
-            if (num % i) == 0:
-                break
-        else:
-            l.append(num)
-    return l
+def Replaceword():
+    with open("poem.txt","r") as f:
+        data = f.readlines()
+        for elem in data:
+            print(elem.replace("is","are"))
 
-#! Main
-
-while 1==1:
+print("\n<<---- MENU ---->>\n")
+print("To read above file and display all lines by replacing lines starting with T with #        --> rt")
+print("To read above file and display lowercase with uppercase and vice-versa.                  --> sc")
+print("To read above file and display by replacing all is with are .                            --> re")
+print("")
+while True:
+    opt = input("\nYour option : ")
     print()
-    print("<<<<----    PYTHON PROGRAM FOR SPECIFIC TASKS    ---->>>>")
-    print("Please go through the following options:")
-    print()
-    print("     Insert a number to find the factorial of the number ==>> fn")
-    print("     Insert a number to display n prime numbers ==>> pn")
-    print("     Insert a number to display Fibonacci Series up to n numbers ==>> fs")
-    print("     Insert the given number to stop or exit the program   ==>>  0")
-    print()
-    opt = input("Option --> ")
-    opt = opt.lower()
-    if opt == "0":
-        print("Thank you for using the program.  :) ")
+    if opt == "rt":
+        ChangeLine()
+    elif opt == "sc":
+        ConvertCase()
+    elif opt == "re":
+        Replaceword()
+    elif opt == "0":
+        print("Thank you for using the program.\n")
         break
     else:
-        print()
-        num = int(input("The number --> "))
-        print()
-        if opt == "fn":
-            print(factorial(num),"is the Factorial of the number provided.")
-        elif opt == "pn":
-            print("The list of prime numbers till",num,"is given below:")
-            print(prime(num))
-        elif opt == "fs":
-            print("The list of Fibonacci Series up to 'n' numbers is given below:")
-            print(fib(num))
-        else:
-            print("Invalid Option. Please try again ........")
-print()
-print()
-print("Press enter to exit    ")
-input()
+        print("Invalid Option....")
