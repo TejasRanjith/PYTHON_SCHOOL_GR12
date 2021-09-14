@@ -88,8 +88,11 @@ def display():
     print(table_display(["StallNo.","Company Name","Contact No","Emirate"],l,["-","-","-","-"]))
 
 def disp_choice():
-    l = ["AUD","DXB"]
-    print("\n    EMIRATES :\n\n1.) Abu Dhabi --> AUD\n2.) Dubai --> DXB\n3.) Sharjah --> SHJ")
+    l = ["AUD","DXB","SHJ","AJM","UAQ","RAK","FUJ"]
+    names = ["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"]
+    print("\n    EMIRATES :\n")
+    for i in range(len(l)):
+        print(f"{i+1}.) {names[i]} --> {l[i]}")
     emirate = int(input("\nYour Choice : "))
 
 
