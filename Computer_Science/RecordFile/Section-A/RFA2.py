@@ -60,14 +60,3 @@ while True:
 
 print("Press enter to exit the program ")
 input()
-
-
-# def replace():
-#     str1 = input("Enter String : ")
-#     for i in str1:
-#         if i.isalpha() == True:
-#             if i not in "AEIOUaeiou":
-#                 str1 = str1.replace(i,"*")
-#     print("new string is: ",str1)
-
-# replace()

@@ -1,11 +1,3 @@
-
-#.y RECORD FILE - A.3
-#.y Design a menu driven Python program that accepts a list of numbers from the user and
-#.y a.      print("Displays the sum of all elements in the list.")
-#.y b.      print("Displays Largest & Smallest Element in the list")
-#.y c.      print("Displays sum of even numbers in the list.")
-#.y d.      print("Displays sum of odd numbers in the list.")
-
 def sum_elem(l):
     print(sum(l))
 
@@ -53,3 +45,12 @@ while True:
 
 print("Press enter to exit the program ")
 input()
+
+
+
+#.y RECORD FILE - A.3
+#.y Design a menu driven Python program that accepts a list of numbers from the user and
+#.y a.      print("Displays the sum of all elements in the list.")
+#.y b.      print("Displays Largest & Smallest Element in the list")
+#.y c.      print("Displays sum of even numbers in the list.")
+#.y d.      print("Displays sum of odd numbers in the list.")

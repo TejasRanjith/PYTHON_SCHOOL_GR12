@@ -1,0 +1,5 @@
+infile=open("rough.txt")
+x = infile.read()
+b = x.count('is')
+print(b)
+infile.close()
