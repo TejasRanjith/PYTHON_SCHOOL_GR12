@@ -1,0 +1,16 @@
+better comments
+bracket pair colorizer 2
+live server
+live share
+magicpython
+material icon theme
+monokai pro
+mysql (an orangish-bluish picture of two cylinders)
+prettier-code formatter
+prettier now
+pylance
+python
+python environment manager
+python extension pack
+sql server (mssql)
+visual studio intellicode

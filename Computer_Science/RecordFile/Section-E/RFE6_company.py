@@ -1,5 +1,6 @@
 import mysql.connector as ms
 from prettytable import PrettyTable
+
 mydb = ms.connect(user = "root",host = "localhost",
 password = "Tejas@035611",database = "company")
 myc = mydb.cursor()
@@ -7,6 +8,7 @@ myc = mydb.cursor()
 def display():
     myc.execute("select * from employee;")
     data = myc.fetchall()
+    print(myc.rowcount)
     t = PrettyTable()
     t.field_names = ('EMPNO','NAME','DEPT','SALARY')
     for r in data:
@@ -28,13 +30,17 @@ def addrecord():
 
 def empdetails():
     emp = input("Employee Number :")
-    myc.execute(f"select * from employee where empno = {emp}")
+    myc.execute(f"select * from employee where empno={emp};")
     data = myc.fetchall()
-    t = PrettyTable()
-    t.field_names = ('EMPNO','NAME','DEPT','SALARY')
-    for r in data:
-       t.add_row(r)
-    print(t) 
+    for row in data:
+        if emp not in row:
+            print("Employee not found")
+        else:
+            t = PrettyTable()
+            t.field_names = ('EMPNO','NAME','DEPT','SALARY')
+            for r in data:
+                t.add_row(r)
+            print(t) 
     
 def changerecord():
     empno = input("Employee Number :")
@@ -46,10 +52,7 @@ def changerecord():
        t.add_row(r)
     print("Data to be changed: ",t,sep = "\n")
     new_sal = input("New Salary     :")
-    name = input("New Name       :")
-    dept = input("New Department :")
-    myc.execute(f'''update employee set salary = '{new_sal}' 
-    and name = '{name}' and Dept = '{dept}' where empno = '{empno}';''')
+    myc.execute(f"update employee set salary = '{new_sal}' where empno = '{empno}';")
     mydb.commit()
     print("Record Updated......\nchoose display option to see the updates.")
 
@@ -87,16 +90,18 @@ d_menu = {
     'del':'To delete an employee from the table           '
 }
 
-while True:
-    print('<<----  MENU  ---->>\n')
-    for elem in d_menu:
-        print('  '+d_menu[elem] + '  --> ' + elem)
-    print('  To stop the main program                         --> 0\n')
-    opt = input('Your Option -->').lower()
-    print()
-    if opt in l_opt:
-        for elem in l_opt:
-            if opt == elem:
-                eval(l_func[l_opt.index(elem)])
-    else:
-        print('Invalid Option......')
+# while True:
+#     print('<<----  MENU  ---->>\n')
+#     for elem in d_menu:
+#         print('  '+d_menu[elem] + '  --> ' + elem)
+#     print('  To stop the main program                         --> 0\n')
+#     opt = input('Your Option -->').lower()
+#     print()
+#     if opt in l_opt:
+#         for elem in l_opt:
+#             if opt == elem:
+#                 eval(l_func[l_opt.index(elem)])
+#     else:
+#         print('Invalid Option......')
+
+display()
